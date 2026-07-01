@@ -6,19 +6,19 @@
   letter-spacing: 0.04em;
   padding: 4px 9px;
   border-radius: var(--radius);
-  border: 1px solid var(--paper-line);
-  color: var(--ink-soft);
-  background: var(--surface);
+  border: 1px solid rgba(109, 129, 150, 0.2);
+  color: var(--gray-light);
+  background: rgba(74, 74, 74, 0.1);
 }
 
 .tag--accent {
-  border-color: rgba(255, 107, 53, 0.4);
-  color: var(--accent-ink);
-  background: rgba(255, 107, 53, 0.08);
+  border-color: rgba(109, 129, 150, 0.4);
+  color: var(--cream);
+  background: rgba(109, 129, 150, 0.15);
 }
 
 .tag--on-dark {
-  border-color: rgba(237, 241, 247, 0.25);
-  color: var(--on-ink-soft);
-  background: rgba(237, 241, 247, 0.06);
+  border-color: rgba(203, 203, 203, 0.2);
+  color: var(--gray-light);
+  background: rgba(203, 203, 203, 0.06);
 }

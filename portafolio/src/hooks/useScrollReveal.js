@@ -1,10 +1,6 @@
 import { useEffect } from 'react'
 
-/**
- * Activa la clase .is-visible sobre cualquier elemento con la clase .reveal
- * cuando entra en el viewport. Respeta prefers-reduced-motion.
- */
-export function useScrollReveal() {
+export function useScrollReveal(deps = []) {
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const targets = document.querySelectorAll('.reveal')
@@ -28,5 +24,5 @@ export function useScrollReveal() {
 
     targets.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
-  }, [])
+  }, deps)
 }

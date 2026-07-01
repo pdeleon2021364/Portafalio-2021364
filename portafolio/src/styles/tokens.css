@@ -3,36 +3,42 @@
    Cambia estos valores para ajustar todo el portafolio.
    ============================================================ */
 :root {
-  /* — Color: fondo papel azulado, tinta marino, acento naranja señal — */
+  /* — Paleta exacta — */
+  --cream: #FFFFE3;
+  --gray-light: #CBCBCB;
+  --slate: #6D8196;
+  --gray-dark: #4A4A4A;
+
+  /* — Legacy (mantener compatibilidad) — */
   --paper: #eef1f6;
   --paper-line: #c9d3e2;
   --ink: #14213d;
   --ink-soft: #4a5773;
-  --accent: #ff6b35;
-  --accent-ink: #7a2c0d;
-  --blue: #3d6fb4;
+  --accent: #6D8196;
+  --accent-ink: #3a4a5a;
+  --blue: #6D8196;
   --teal: #2e8b7e;
   --surface: #ffffff;
   --surface-tint: #e4e9f1;
 
-  /* dark sheet (hero / footer) */
+  /* dark sheet */
   --ink-900: #0f1830;
   --ink-800: #14213d;
   --ink-700: #1f3158;
-  --on-ink: #edf1f7;
-  --on-ink-soft: #aab6cf;
+  --on-ink: #FFFFE3;
+  --on-ink-soft: #CBCBCB;
 
   /* — Tipografía — */
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-display: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
   /* — Layout — */
   --sheet-margin: clamp(16px, 4vw, 48px);
   --content-max: 1180px;
-  --radius: 2px;
+  --radius: 6px;
 
-  /* — Sombra de "papel" — */
+  /* — Sombras — */
   --shadow-card: 0 1px 0 var(--paper-line), 0 8px 24px -16px rgba(20, 33, 61, 0.35);
 }
 
@@ -56,7 +62,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: #090a0f;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -66,7 +72,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  color: var(--ink);
+  color: var(--cream);
   margin: 0;
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -102,7 +108,7 @@ img {
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--slate);
 }
 
 .section-kicker {
@@ -113,7 +119,7 @@ img {
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--slate);
   margin-bottom: 10px;
 }
 
@@ -121,19 +127,21 @@ img {
   content: '';
   width: 14px;
   height: 1px;
-  background: var(--accent);
+  background: var(--slate);
 }
 
 .section-title {
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 600;
+  color: var(--cream);
 }
 
 .section-sub {
   margin-top: 10px;
   max-width: 56ch;
-  color: var(--ink-soft);
+  color: var(--gray-dark);
   font-size: 1rem;
+  opacity: 0.8;
 }
 
 .container {

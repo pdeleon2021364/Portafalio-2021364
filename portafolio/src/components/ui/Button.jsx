@@ -1,14 +1,13 @@
 import './Button.css'
 
 function Button({
-  as = 'button',
+  as: Tag = 'button',
   href,
   variant = 'primary',
   icon,
   children,
   ...rest
 }) {
-  const Tag = as === 'a' ? 'a' : 'button'
   return (
     <Tag
       className={`btn btn--${variant}`}

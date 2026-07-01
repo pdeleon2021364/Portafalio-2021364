@@ -21,7 +21,7 @@
   top: 6px;
   bottom: -4px;
   width: 1px;
-  background: var(--paper-line);
+  background: rgba(109, 129, 150, 0.2);
 }
 
 .experience__item:last-child::before {
@@ -30,14 +30,17 @@
 
 .experience__period {
   padding-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--slate);
 }
 
 .experience__dot {
   width: 9px;
   height: 9px;
   margin-top: 5px;
-  border: 2px solid var(--accent);
-  background: var(--paper);
+  border: 2px solid var(--slate);
+  background: rgba(15, 24, 48, 0.75);
   border-radius: 50%;
   z-index: 1;
 }
@@ -45,32 +48,19 @@
 .experience__content h3 {
   font-size: 1.05rem;
   font-weight: 600;
+  color: var(--cream);
 }
 
 .experience__place {
   margin-top: 4px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--blue);
+  color: var(--slate);
 }
 
 .experience__desc {
   margin-top: 8px;
-  color: var(--ink-soft);
+  color: var(--gray-light);
   max-width: 64ch;
-}
-
-@media (max-width: 620px) {
-  .experience__item {
-    grid-template-columns: 24px 1fr;
-  }
-  .experience__period {
-    grid-row: 1;
-    grid-column: 1 / -1;
-    padding-top: 0;
-    margin-bottom: 8px;
-  }
-  .experience__item::before {
-    left: 11px;
-  }
+  line-height: 1.7;
 }

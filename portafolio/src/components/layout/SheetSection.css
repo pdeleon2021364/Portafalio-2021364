@@ -1,12 +1,13 @@
 .sheet {
   position: relative;
-  border-top: 1px solid var(--paper-line);
+  background: rgba(15, 24, 48, 0.75);
+  border-top: 1px solid rgba(109, 129, 150, 0.2);
   padding: clamp(56px, 9vw, 96px) 0;
 }
 
 .sheet--dark {
-  background: var(--ink-800);
-  border-top-color: var(--ink-700);
+  background: rgba(15, 24, 48, 0.88);
+  border-top-color: rgba(74, 74, 74, 0.4);
 }
 
 .sheet__mark {
@@ -21,12 +22,12 @@
 .sheet__mark::after {
   content: '';
   position: absolute;
-  background: var(--paper-line);
+  background: rgba(109, 129, 150, 0.3);
 }
 
 .sheet--dark .sheet__mark::before,
 .sheet--dark .sheet__mark::after {
-  background: var(--ink-700);
+  background: rgba(74, 74, 74, 0.5);
 }
 
 .sheet__mark::before {
@@ -56,12 +57,12 @@
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
-  color: var(--ink-soft);
+  color: var(--gray-light);
   opacity: 0.7;
 }
 
 .sheet--dark .sheet__index {
-  color: var(--on-ink-soft);
+  color: var(--gray-light);
 }
 
 .sheet__content {

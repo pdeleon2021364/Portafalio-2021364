@@ -1,9 +1,9 @@
 .contact {
   position: relative;
-  background: var(--ink-900);
+  background: rgba(15, 24, 48, 0.88);
   color: var(--on-ink);
   padding: clamp(64px, 10vw, 110px) 0;
-  border-top: 1px solid var(--ink-700);
+  border-top: 1px solid rgba(74, 74, 74, 0.4);
 }
 
 .contact__mark {
@@ -17,7 +17,7 @@
 .contact__mark::after {
   content: '';
   position: absolute;
-  background: rgba(237, 241, 247, 0.25);
+  background: rgba(109, 129, 150, 0.3);
 }
 
 .contact__mark::before {
@@ -74,11 +74,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid rgba(237, 241, 247, 0.14);
+  border-top: 1px solid rgba(109, 129, 150, 0.2);
 }
 
 .contact__links li {
-  border-bottom: 1px solid rgba(237, 241, 247, 0.14);
+  border-bottom: 1px solid rgba(109, 129, 150, 0.15);
 }
 
 .contact__links a {

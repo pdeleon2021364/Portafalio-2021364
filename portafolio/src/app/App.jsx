@@ -1,33 +1,54 @@
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Navbar from '../components/layout/Navbar.jsx'
 import Footer from '../components/layout/Footer.jsx'
-import Hero from '../sections/Hero/Hero.jsx'
-import About from '../sections/About/About.jsx'
-import Skills from '../sections/Skills/Skills.jsx'
-import Projects from '../sections/Projects/Projects.jsx'
-import Experience from '../sections/Experience/Experience.jsx'
-import Certifications from '../sections/Certifications/Certifications.jsx'
-import Contact from '../sections/Contact/Contact.jsx'
+import StarBackground from '../components/layout/StarBackground.jsx'
 import { useScrollReveal } from '../hooks/useScrollReveal.js'
+
+import HomePage from '../pages/HomePage.jsx'
+import AboutPage from '../pages/AboutPage.jsx'
+import SkillsPage from '../pages/SkillsPage.jsx'
+import ProjectsPage from '../pages/ProjectsPage.jsx'
+import ExperiencePage from '../pages/ExperiencePage.jsx'
+import CertificationsPage from '../pages/CertificationsPage.jsx'
+import ContactPage from '../pages/ContactPage.jsx'
 import './App.css'
 
-function App() {
-  useScrollReveal()
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
+
+function AppContent() {
+  const location = useLocation()
+  useScrollReveal([location.pathname])
 
   return (
     <div className="app-shell">
-      <Navbar initials="PL" />
+      <ScrollToTop />
+      <StarBackground />
+      <Navbar />
       <main id="main-content">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Certifications />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sobre-mi" element={<AboutPage />} />
+          <Route path="/habilidades" element={<SkillsPage />} />
+          <Route path="/proyectos" element={<ProjectsPage />} />
+          <Route path="/experiencia" element={<ExperiencePage />} />
+          <Route path="/certificaciones" element={<CertificationsPage />} />
+          <Route path="/contacto" element={<ContactPage />} />
+        </Routes>
       </main>
-      <Contact />
       <Footer />
     </div>
   )
+}
+
+function App() {
+  return <AppContent />
 }
 
 export default App

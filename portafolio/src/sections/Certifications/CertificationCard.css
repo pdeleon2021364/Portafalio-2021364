@@ -1,11 +1,12 @@
 .cert-card {
-  border: 1px solid var(--paper-line);
-  background: var(--surface);
+  border: 1px solid rgba(109, 129, 150, 0.2);
+  background: rgba(74, 74, 74, 0.12);
   padding: 22px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  box-shadow: var(--shadow-card);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cert-card__top {
@@ -17,23 +18,24 @@
 .cert-card__index {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--ink-soft);
+  color: var(--gray-light);
 }
 
 .cert-card__title {
   margin-top: 6px;
   font-size: 1.05rem;
   font-weight: 600;
+  color: var(--cream);
 }
 
 .cert-card__issuer {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--blue);
+  color: var(--slate);
 }
 
 .cert-card__desc {
-  color: var(--ink-soft);
+  color: var(--gray-light);
   font-size: 0.9rem;
 }
 
@@ -41,10 +43,10 @@
   margin-top: 10px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--accent-ink);
+  color: var(--slate);
   text-decoration: none;
 }
 
 .cert-card__link:hover {
-  color: var(--accent);
+  color: var(--cream);
 }

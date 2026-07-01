@@ -1,14 +1,14 @@
+import SkillIcon from './SkillIcon.jsx'
 import './GaugeBar.css'
 
-/**
- * GaugeBar — barra de nivel estilo "instrumento de medición",
- * con marcas (ticks) en vez de un degradado de color genérico.
- */
 function GaugeBar({ label, level = 0, status }) {
   return (
     <div className="gauge">
       <div className="gauge__head">
-        <span className="gauge__label">{label}</span>
+        <span className="gauge__label-wrap">
+          <SkillIcon name={label} />
+          <span className="gauge__label">{label}</span>
+        </span>
         <span className="gauge__value">
           {status || `${level}%`}
         </span>

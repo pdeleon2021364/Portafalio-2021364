@@ -5,27 +5,40 @@
 .gauge__head {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   margin-bottom: 6px;
+}
+
+.gauge__label-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .gauge__label {
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--cream);
 }
 
 .gauge__value {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--blue);
+  color: var(--slate);
 }
 
 .gauge__track {
   position: relative;
   height: 6px;
-  background: var(--surface-tint);
-  border-radius: 1px;
+  background: rgba(109, 129, 150, 0.15);
+  border-radius: 3px;
   overflow: hidden;
 }
 
@@ -33,7 +46,7 @@
   position: absolute;
   inset: 0;
   width: 0;
-  background: var(--blue);
+  background: var(--slate);
   transition: width 0.8s ease;
 }
 
@@ -47,5 +60,5 @@
 .gauge__ticks span {
   width: 1px;
   height: 100%;
-  background: rgba(238, 241, 246, 0.6);
+  background: rgba(0, 0, 0, 0.3);
 }

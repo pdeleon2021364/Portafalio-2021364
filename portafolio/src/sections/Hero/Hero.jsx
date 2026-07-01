@@ -1,8 +1,12 @@
+import { Link } from 'react-router-dom'
 import { personalInfo } from '../../data/personalInfo.js'
 import Button from '../../components/ui/Button.jsx'
 import './Hero.css'
 
 function Hero() {
+  const date = new Date()
+  const months = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
+
   return (
     <section id="inicio" className="hero">
       <span className="hero__mark hero__mark--tl" aria-hidden="true" />
@@ -20,7 +24,7 @@ function Hero() {
           <p className="hero__tagline">{personalInfo.tagline}</p>
 
           <div className="hero__actions">
-            <Button as="a" href="#proyectos" variant="primary">
+            <Button as={Link} to="/proyectos" variant="primary">
               Ver proyectos
             </Button>
             <Button as="a" href={personalInfo.links.cv} variant="outline" download>
@@ -30,28 +34,20 @@ function Hero() {
         </div>
 
         <div className="hero__titleblock reveal" style={{ transitionDelay: '0.1s' }}>
-          <div className="titleblock">
-            <div className="titleblock__row">
-              <span className="titleblock__key">Proyecto</span>
-              <span className="titleblock__val">Portafolio personal</span>
-            </div>
-            <div className="titleblock__row">
-              <span className="titleblock__key">Autor</span>
-              <span className="titleblock__val">{personalInfo.shortName}</span>
-            </div>
-            <div className="titleblock__row">
-              <span className="titleblock__key">Ubicación</span>
-              <span className="titleblock__val">{personalInfo.location}</span>
-            </div>
-            <div className="titleblock__row">
-              <span className="titleblock__key">Estado</span>
-              <span className="titleblock__val titleblock__val--accent">
-                {personalInfo.availability}
-              </span>
-            </div>
-            <div className="titleblock__row">
-              <span className="titleblock__key">Escala</span>
-              <span className="titleblock__val">1 : 1 — sin atajos</span>
+          <div className="parent">
+            <div className="card">
+              <div className="content-box">
+                <span className="card-title">Portafolio personal</span>
+                <p className="card-content">
+                  {personalInfo.shortName} · {personalInfo.location}<br />
+                  <span className="card-status">{personalInfo.availability}</span>
+                </p>
+                <Link to="/proyectos" className="see-more">Ver proyectos</Link>
+              </div>
+              <div className="date-box">
+                <span className="month">{months[date.getMonth()]}</span>
+                <span className="date">{date.getDate()}</span>
+              </div>
             </div>
           </div>
         </div>

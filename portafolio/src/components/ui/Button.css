@@ -2,15 +2,16 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 22px;
-  border-radius: var(--radius);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:active {
@@ -24,32 +25,34 @@
 }
 
 .btn--primary {
-  background: var(--accent);
-  color: #fff7f2;
+  background: var(--slate);
+  color: var(--cream);
 }
 
 .btn--primary:hover {
-  background: #ff7d4d;
+  background: #7d91a6;
+  box-shadow: 0 4px 16px rgba(109, 129, 150, 0.3);
 }
 
 .btn--outline {
   background: transparent;
-  color: var(--on-ink);
-  border-color: rgba(237, 241, 247, 0.35);
+  color: var(--gray-light);
+  border-color: rgba(74, 74, 74, 0.6);
 }
 
 .btn--outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--gray-light);
+  color: var(--cream);
+  background: rgba(203, 203, 203, 0.06);
 }
 
 .btn--ghost {
   background: transparent;
-  color: var(--ink);
-  border-color: var(--paper-line);
+  color: var(--gray-light);
+  border-color: transparent;
 }
 
 .btn--ghost:hover {
-  border-color: var(--blue);
-  color: var(--blue);
+  border-color: var(--slate);
+  color: var(--cream);
 }
