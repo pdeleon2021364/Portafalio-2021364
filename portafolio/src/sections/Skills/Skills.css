@@ -1,0 +1,73 @@
+.skills__head {
+  max-width: 60ch;
+}
+
+.skills__kicker,
+.skills__title,
+.skills__sub {
+  color: var(--on-ink);
+}
+
+.skills__kicker {
+  color: var(--accent);
+}
+
+.skills__kicker::before {
+  background: var(--accent);
+}
+
+.skills__sub {
+  color: var(--on-ink-soft);
+}
+
+.skills__groups {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 56px;
+}
+
+.skills__group-head h3 {
+  font-size: 1.05rem;
+  color: var(--on-ink);
+}
+
+.skills__group-head p {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--on-ink-soft);
+}
+
+.skills__group-bars {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Adaptar el GaugeBar al fondo oscuro de esta sección */
+.skills .gauge__label {
+  color: var(--on-ink);
+}
+
+.skills .gauge__value {
+  color: var(--accent);
+}
+
+.skills .gauge__track {
+  background: rgba(237, 241, 247, 0.1);
+}
+
+.skills .gauge__fill {
+  background: var(--accent);
+}
+
+.skills .gauge__ticks span {
+  background: rgba(15, 24, 48, 0.5);
+}
+
+@media (max-width: 760px) {
+  .skills__groups {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,135 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(238, 241, 246, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--paper-line);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.navbar__brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: var(--ink);
+  color: var(--on-ink);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid var(--ink);
+}
+
+.navbar__brand-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 4px;
+}
+
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  border-radius: var(--radius);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.navbar__link-index {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--blue);
+  opacity: 0.7;
+}
+
+.navbar__link:hover {
+  color: var(--ink);
+  background: var(--surface-tint);
+}
+
+.navbar__link.is-active {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.navbar__link.is-active .navbar__link-index {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 1px solid var(--paper-line);
+  cursor: pointer;
+}
+
+.navbar__toggle span {
+  height: 1px;
+  background: var(--ink);
+  width: 16px;
+  margin: 0 auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar__mobile {
+  display: none;
+  flex-direction: column;
+  border-top: 1px solid var(--paper-line);
+  background: var(--paper);
+}
+
+.navbar__mobile button {
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--paper-line);
+  padding: 14px var(--sheet-margin);
+  font-size: 0.95rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .navbar__links {
+    display: none;
+  }
+  .navbar__toggle {
+    display: flex;
+  }
+  .navbar__mobile.is-open {
+    display: flex;
+  }
+}

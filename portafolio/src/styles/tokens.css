@@ -1,0 +1,155 @@
+/* ============================================================
+   DESIGN TOKENS — "Hoja de plano" (blueprint sheet)
+   Cambia estos valores para ajustar todo el portafolio.
+   ============================================================ */
+:root {
+  /* — Color: fondo papel azulado, tinta marino, acento naranja señal — */
+  --paper: #eef1f6;
+  --paper-line: #c9d3e2;
+  --ink: #14213d;
+  --ink-soft: #4a5773;
+  --accent: #ff6b35;
+  --accent-ink: #7a2c0d;
+  --blue: #3d6fb4;
+  --teal: #2e8b7e;
+  --surface: #ffffff;
+  --surface-tint: #e4e9f1;
+
+  /* dark sheet (hero / footer) */
+  --ink-900: #0f1830;
+  --ink-800: #14213d;
+  --ink-700: #1f3158;
+  --on-ink: #edf1f7;
+  --on-ink-soft: #aab6cf;
+
+  /* — Tipografía — */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* — Layout — */
+  --sheet-margin: clamp(16px, 4vw, 48px);
+  --content-max: 1180px;
+  --radius: 2px;
+
+  /* — Sombra de "papel" — */
+  --shadow-card: 0 1px 0 var(--paper-line), 0 8px 24px -16px rgba(20, 33, 61, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* — Utilidades compartidas de "plano técnico" — */
+
+.label-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.section-kicker::before {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600;
+}
+
+.section-sub {
+  margin-top: 10px;
+  max-width: 56ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--sheet-margin);
+}
+
+/* Reveal-on-scroll: aplicado vía hook useScrollReveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

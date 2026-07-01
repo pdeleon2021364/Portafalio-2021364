@@ -1,0 +1,23 @@
+.footer {
+  background: var(--ink-900);
+  border-top: 1px solid var(--ink-700);
+  padding: 22px 0;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer__text {
+  font-size: 0.8rem;
+  color: var(--on-ink-soft);
+}
+
+.footer__text--mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
