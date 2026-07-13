@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { personalInfo } from '../../data/personalInfo.js'
 import Button from '../../components/ui/Button.jsx'
 import './Hero.css'
@@ -24,7 +23,7 @@ function Hero() {
           <p className="hero__tagline">{personalInfo.tagline}</p>
 
           <div className="hero__actions">
-            <Button as={Link} to="/proyectos" variant="primary">
+            <Button as="a" href="#proyectos" variant="primary">
               Ver proyectos
             </Button>
             <Button as="a" href={personalInfo.links.cv} variant="outline" download>
@@ -42,7 +41,7 @@ function Hero() {
                   {personalInfo.shortName} · {personalInfo.location}<br />
                   <span className="card-status">{personalInfo.availability}</span>
                 </p>
-                <Link to="/proyectos" className="see-more">Ver proyectos</Link>
+                <a href="#proyectos" className="see-more">Ver proyectos</a>
               </div>
               <div className="date-box">
                 <span className="month">{months[date.getMonth()]}</span>

@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: rgba(15, 24, 48, 0.88);
+  background: rgba(13, 13, 13, 0.92);
   color: var(--cream);
   overflow: hidden;
   padding: 120px 0 80px;
@@ -118,7 +118,7 @@
   background-position:
     0 0,
     0 0;
-  background-color: rgba(15, 24, 48, 0.6);
+  background-color: rgba(26, 26, 26, 0.7);
   width: 100%;
   box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
   transition: all 0.5s ease-in-out;
@@ -132,7 +132,7 @@
 }
 
 .content-box {
-  background: rgba(109, 129, 150, 0.85);
+  background: rgba(107, 114, 128, 0.5);
   transition: all 0.5s ease-in-out;
   padding: 60px 25px 25px 25px;
   transform-style: preserve-3d;
@@ -179,7 +179,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--cream);
-  background: rgba(15, 24, 48, 0.8);
+  background: rgba(26, 26, 26, 0.85);
   padding: 0.5rem 0.7rem;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
@@ -188,7 +188,7 @@
 
 .content-box .see-more:hover {
   transform: translate3d(0px, 0px, 60px);
-  background: rgba(15, 24, 48, 0.95);
+  background: rgba(13, 13, 13, 0.95);
 }
 
 .date-box {
@@ -197,7 +197,7 @@
   right: 20px;
   height: 60px;
   width: 60px;
-  background: rgba(15, 24, 48, 0.9);
+  background: rgba(17, 17, 17, 0.9);
   border: 1px solid var(--slate);
   padding: 10px;
   transform: translate3d(0px, 0px, 80px);

@@ -1,9 +1,9 @@
 .contact {
   position: relative;
-  background: rgba(15, 24, 48, 0.88);
+  background: rgba(13, 13, 13, 0.92);
   color: var(--on-ink);
   padding: clamp(64px, 10vw, 110px) 0;
-  border-top: 1px solid rgba(74, 74, 74, 0.4);
+  border-top: 1px solid rgba(75, 85, 99, 0.3);
 }
 
 .contact__mark {

@@ -7,3 +7,14 @@
 .app-shell main {
   flex: 1;
 }
+
+.pixel-trail-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pixel-trail-container .pixel-canvas {
+  pointer-events: none;
+}

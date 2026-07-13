@@ -1,0 +1,127 @@
+.stack-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(15, 44, 76, 0.2);
+  border: 1px solid rgba(91, 107, 122, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  height: 100%;
+}
+
+/* ===== media / image ===== */
+.stack-card__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: rgba(109, 129, 150, 0.08);
+  overflow: hidden;
+}
+
+.stack-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stack-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+    linear-gradient(rgba(109, 129, 150, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(109, 129, 150, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.stack-card__placeholder span {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--slate);
+  opacity: 0.3;
+}
+
+/* ===== body ===== */
+.stack-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.stack-card__category {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.stack-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.stack-card__desc {
+  color: var(--gray-light);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+.stack-card__learned {
+  font-size: 0.82rem;
+  color: var(--gray-light);
+  opacity: 0.7;
+}
+
+.stack-card__learned span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stack-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.stack-card__links {
+  margin-top: auto;
+  padding-top: 14px;
+  display: flex;
+  gap: 18px;
+  border-top: 1px solid rgba(91, 107, 122, 0.15);
+}
+
+.stack-card__links a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--slate);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.stack-card__links a:hover {
+  color: var(--cream);
+}
+
+/* ===== responsive ===== */
+@media (max-width: 640px) {
+  .stack-card__body {
+    padding: 1.2rem;
+  }
+
+  .stack-card__title {
+    font-size: 1.05rem;
+  }
+}

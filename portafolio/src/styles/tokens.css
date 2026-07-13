@@ -4,29 +4,29 @@
    ============================================================ */
 :root {
   /* — Paleta exacta — */
-  --cream: #FFFFE3;
-  --gray-light: #CBCBCB;
-  --slate: #6D8196;
-  --gray-dark: #4A4A4A;
+  --cream: #f3f4f6;
+  --gray-light: #d1d5db;
+  --slate: #6b7280;
+  --gray-dark: #4b5563;
 
   /* — Legacy (mantener compatibilidad) — */
-  --paper: #eef1f6;
-  --paper-line: #c9d3e2;
-  --ink: #14213d;
-  --ink-soft: #4a5773;
-  --accent: #6D8196;
-  --accent-ink: #3a4a5a;
-  --blue: #6D8196;
-  --teal: #2e8b7e;
-  --surface: #ffffff;
-  --surface-tint: #e4e9f1;
+  --paper: #1a1a1a;
+  --paper-line: #2a2a2a;
+  --ink: #e5e7eb;
+  --ink-soft: #9ca3af;
+  --accent: #6b7280;
+  --accent-ink: #4b5563;
+  --blue: #6b7280;
+  --teal: #6b7280;
+  --surface: #111111;
+  --surface-tint: #1a1a1a;
 
   /* dark sheet */
-  --ink-900: #0f1830;
-  --ink-800: #14213d;
-  --ink-700: #1f3158;
-  --on-ink: #FFFFE3;
-  --on-ink-soft: #CBCBCB;
+  --ink-900: #0d0d0d;
+  --ink-800: #1a1a1a;
+  --ink-700: #2a2a2a;
+  --on-ink: #f3f4f6;
+  --on-ink-soft: #d1d5db;
 
   /* — Tipografía — */
   --font-display: 'Inter', 'Space Grotesk', system-ui, sans-serif;
@@ -39,7 +39,7 @@
   --radius: 6px;
 
   /* — Sombras — */
-  --shadow-card: 0 1px 0 var(--paper-line), 0 8px 24px -16px rgba(20, 33, 61, 0.35);
+  --shadow-card: 0 1px 0 var(--paper-line), 0 8px 24px -16px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -62,7 +62,7 @@ html {
 
 body {
   margin: 0;
-  background: #090a0f;
+  background: #0a0a0a;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;

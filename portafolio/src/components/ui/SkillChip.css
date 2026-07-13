@@ -1,39 +1,54 @@
-.skill-chip {
-  display: inline-flex;
+.skill-row {
+  display: grid;
+  grid-template-columns: 24px 140px 1fr 60px;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(109, 129, 150, 0.15);
-  backdrop-filter: blur(4px);
-  cursor: default;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(91, 107, 122, 0.14);
 }
 
-.skill-chip:hover {
-  transform: scale(1.05);
-  border-color: var(--chip-color);
-  box-shadow:
-    0 0 18px 2px color-mix(in srgb, var(--chip-color) 40%, transparent),
-    inset 0 0 12px color-mix(in srgb, var(--chip-color) 10%, transparent);
-}
+.skill-row:last-child { border-bottom: none; }
 
-.skill-chip .skill-icon {
-  width: 22px;
-  height: 22px;
-}
+.skill-row__icon { display: flex; }
+.skill-row__icon .skill-icon { width: 18px; height: 18px; opacity: 0.85; }
 
-.skill-chip__name {
+.skill-row__name {
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 450;
+  letter-spacing: 0.01em;
   color: var(--cream);
 }
 
-.skill-chip__level {
-  margin-left: auto;
+.skill-row__track {
+  position: relative;
+  height: 5px;
+  border-radius: 3px;
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.14) 0,
+      rgba(255, 255, 255, 0.14) 1px,
+      transparent 1px,
+      transparent 10%
+    ),
+    rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.skill-row__fill { display: block; height: 100%; border-radius: 3px; }
+
+.skill-row__value {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--gray-light);
-  opacity: 0.7;
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+  color: var(--row-color);
+  opacity: 0.85;
+  text-align: right;
+}
+
+@media (max-width: 780px) {
+  .skill-row {
+    grid-template-columns: 20px 96px 1fr 46px;
+    gap: 12px;
+  }
 }

@@ -7,58 +7,16 @@
   justify-content: center;
   z-index: 50;
   padding: 0 12px;
+  pointer-events: none;
 }
 
-.nb-tabs {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 8px;
-  border: 1px solid var(--slate);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 8px;
-}
-
-.nb-tab {
-  flex-grow: 1;
-  text-align: center;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  font-family: var(--font-display);
-  cursor: pointer;
-  transition: 0.25s ease-in-out;
-  text-decoration: none;
-  color: var(--gray-light);
-  background: transparent;
-  user-select: none;
-  white-space: nowrap;
-}
-
-.nb-tab:active {
-  transform: scale(0.9);
-}
-
-.nb-tab--on {
-  background: var(--slate);
-  color: var(--cream);
-  box-shadow: 0 0 14px 0 rgba(109, 129, 150, 0.5);
+.nb-wrap > * {
+  pointer-events: auto;
 }
 
 @media (max-width: 800px) {
   .nb-wrap {
     top: 8px;
     padding: 0 6px;
-  }
-  .nb-tabs {
-    gap: 4px;
-    padding: 5px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .nb-tab {
-    padding: 5px 8px;
-    font-size: 9px;
   }
 }
