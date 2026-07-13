@@ -5,6 +5,7 @@
 
 .skills__sub { color: var(--gray-dark); opacity: 0.75; }
 
+/* --- dossier layout --- */
 .dossier {
   margin-top: 56px;
   display: grid;
@@ -66,9 +67,23 @@
 /* --- Panel --- */
 .dossier__panel {
   position: relative;
-  padding: 44px 48px;
   background: rgba(15, 44, 76, 0.08);
   overflow: hidden;
+}
+
+.dossier__content {
+  position: absolute;
+  inset: 0;
+  padding: 44px 48px 130px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.dossier__content[data-active='true'] {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .dossier__watermark {
@@ -83,8 +98,6 @@
   pointer-events: none;
   user-select: none;
 }
-
-.dossier__content { position: relative; z-index: 1; }
 
 .dossier__panel-title {
   font-family: var(--font-display);
@@ -133,7 +146,6 @@
   align-items: center;
   justify-content: center;
   transform: rotate(-9deg);
-  z-index: 1;
 }
 
 .dossier__stamp-mark {
@@ -174,7 +186,7 @@
 
   .dossier__tab[data-active='true'] { border-bottom-color: #d4af37; }
 
-  .dossier__panel { padding: 32px 22px 88px; }
+  .dossier__content { padding: 32px 22px 110px; }
   .dossier__watermark { font-size: 7rem; top: -14px; }
   .dossier__panel-title { font-size: 1.35rem; }
   .dossier__stamp { width: 70px; height: 70px; bottom: 16px; right: 16px; }

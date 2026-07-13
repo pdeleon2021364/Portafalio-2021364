@@ -1,23 +1,11 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import SheetSection from '../../components/layout/SheetSection.jsx'
 import SkillRow from '../../components/ui/SkillChip.jsx'
 import { skillGroups } from '../../data/skills.js'
 import './Skills.css'
 
-const panelVariants = {
-  initial: { opacity: 0, x: 16 },
-  animate: { opacity: 1, x: 0, transition: { duration: 0.35, ease: 'easeOut' } },
-  exit: { opacity: 0, x: -12, transition: { duration: 0.2, ease: 'easeIn' } },
-}
-
-const listVariants = {
-  animate: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
-}
-
 function Skills() {
   const [active, setActive] = useState(0)
-  const group = skillGroups[active]
 
   return (
     <SheetSection id="habilidades" index={3} tone="dark">
@@ -47,44 +35,37 @@ function Skills() {
           </nav>
 
           <div className="dossier__panel">
-            <span className="dossier__watermark" aria-hidden="true">
-              {String(active + 1).padStart(2, '0')}
-            </span>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={group.title}
+            {skillGroups.map((g, i) => (
+              <div
+                key={g.title}
                 className="dossier__content"
-                variants={panelVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
+                data-active={active === i}
+                aria-hidden={active !== i}
               >
+                <span className="dossier__watermark" aria-hidden="true">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+
                 <header className="dossier__panel-head">
-                  <h3 className="dossier__panel-title">{group.title}</h3>
-                  <p className="dossier__panel-desc">{group.description}</p>
+                  <h3 className="dossier__panel-title">{g.title}</h3>
+                  <p className="dossier__panel-desc">{g.description}</p>
                   <span className="dossier__panel-meta">
-                    {String(group.skills.length).padStart(2, '0')} competencias registradas
+                    {String(g.skills.length).padStart(2, '0')} competencias registradas
                   </span>
                 </header>
 
-                <motion.ul
-                  className="dossier__ledger"
-                  variants={listVariants}
-                  initial="initial"
-                  animate="animate"
-                >
-                  {group.skills.map((skill) => (
+                <ul className="dossier__ledger">
+                  {g.skills.map((skill) => (
                     <SkillRow key={skill.name} {...skill} />
                   ))}
-                </motion.ul>
-              </motion.div>
-            </AnimatePresence>
+                </ul>
 
-            <div className="dossier__stamp" aria-hidden="true">
-              <span className="dossier__stamp-mark">AC</span>
-              <span className="dossier__stamp-label">verificado · 2026</span>
-            </div>
+                <div className="dossier__stamp" aria-hidden="true">
+                  <span className="dossier__stamp-mark">AC</span>
+                  <span className="dossier__stamp-label">verificado · 2026</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
