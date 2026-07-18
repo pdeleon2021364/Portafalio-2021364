@@ -1,60 +1,58 @@
+import { useState, useEffect } from 'react'
+import ProfileCard from '../../components/ui/ProfileCard.jsx'
 import { personalInfo } from '../../data/personalInfo.js'
-import Button from '../../components/ui/Button.jsx'
 import './Hero.css'
 
+const greetings = ['Bienvenid@', 'Welcome', 'Bienvenue', 'Willkommen', 'Benvenut@']
+
 function Hero() {
-  const date = new Date()
-  const months = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
+  const [greetingIndex, setGreetingIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGreetingIndex(i => (i + 1) % greetings.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section id="inicio" className="hero">
-      <span className="hero__mark hero__mark--tl" aria-hidden="true" />
-      <span className="hero__mark hero__mark--tr" aria-hidden="true" />
-      <span className="hero__mark hero__mark--bl" aria-hidden="true" />
-      <span className="hero__mark hero__mark--br" aria-hidden="true" />
+      <div className="hero__bg" />
 
-      <div className="hero__grid" aria-hidden="true" />
+      <div className="hero__layout container">
+        <div className="hero__copy">
+          <span className="hero__greeting" key={greetingIndex}>
+            {greetings[greetingIndex]}
+          </span>
+          <h1 className="hero__name">{personalInfo.name.split(' ').slice(0, 2).join(' ')}</h1>
 
-      <div className="container hero__content">
-        <div className="hero__copy reveal">
-          <span className="section-kicker hero__kicker">Portafolio · 2026</span>
-          <h1 className="hero__name">{personalInfo.name}</h1>
-          <p className="hero__role">{personalInfo.role}</p>
-          <p className="hero__tagline">{personalInfo.tagline}</p>
+          <div className="hero__manifesto">
+            <span className="hero__quote-mark" aria-hidden="true">&rdquo;</span>
+            <p>
+              Basta de introducciones largas. Buscas un desarrollador que escriba código limpio,
+              resuelva problemas sin que le tiemble la mano y entregue a tiempo.
+            </p>
+            <p className="hero__emph">Ese soy yo.</p>
+            <p>
+              Menos charla,{' '}
+              <span className="hero__highlight">más construcción</span>.
+              Echa un vistazo a mis proyectos.
+            </p>
+          </div>
 
           <div className="hero__actions">
-            <Button as="a" href="#proyectos" variant="primary">
+            <a href="#proyectos" className="hero__btn hero__btn--primary">
               Ver proyectos
-            </Button>
-            <Button as="a" href={personalInfo.links.cv} variant="outline" download>
+            </a>
+            <a href={personalInfo.links.cv} className="hero__btn hero__btn--outline" download>
               Descargar CV
-            </Button>
+            </a>
           </div>
         </div>
 
-        <div className="hero__titleblock reveal" style={{ transitionDelay: '0.1s' }}>
-          <div className="parent">
-            <div className="card">
-              <div className="content-box">
-                <span className="card-title">Portafolio personal</span>
-                <p className="card-content">
-                  {personalInfo.shortName} · {personalInfo.location}<br />
-                  <span className="card-status">{personalInfo.availability}</span>
-                </p>
-                <a href="#proyectos" className="see-more">Ver proyectos</a>
-              </div>
-              <div className="date-box">
-                <span className="month">{months[date.getMonth()]}</span>
-                <span className="date">{date.getDate()}</span>
-              </div>
-            </div>
-          </div>
+        <div className="hero__card-col">
+          <ProfileCard showUserInfo={false} showText={false} />
         </div>
-      </div>
-
-      <div className="hero__scroll" aria-hidden="true">
-        <span className="label-tag">Desplázate</span>
-        <span className="hero__scroll-line" />
       </div>
     </section>
   )

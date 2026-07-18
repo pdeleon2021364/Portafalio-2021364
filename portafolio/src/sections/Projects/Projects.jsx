@@ -5,7 +5,7 @@ import './Projects.css'
 
 function Projects() {
   return (
-    <SheetSection id="proyectos" index={4}>
+    <SheetSection id="proyectos" index={5}>
       <div className="projects">
         <div className="projects__head reveal">
           <span className="section-kicker">Proyectos</span>

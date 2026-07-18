@@ -4,7 +4,7 @@ import './Experience.css'
 
 function Experience() {
   return (
-    <SheetSection id="experiencia" index={5}>
+    <SheetSection id="experiencia" index={6}>
       <div className="experience">
         <div className="experience__head reveal">
           <span className="section-kicker">Experiencia</span>

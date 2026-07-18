@@ -3,6 +3,7 @@ import Navbar from '../components/layout/Navbar.jsx'
 import Footer from '../components/layout/Footer.jsx'
 import Ferrofluid from '../components/ui/Ferrofluid.jsx'
 import PixelTrail from '../components/ui/PixelTrail.jsx'
+import Loading from '../components/ui/Loading.jsx'
 import { useScrollReveal } from '../hooks/useScrollReveal.js'
 
 import HomePage from '../pages/HomePage.jsx'
@@ -53,7 +54,12 @@ function AppContent() {
 }
 
 function App() {
-  return <AppContent />
+  return (
+    <>
+      <Loading />
+      <AppContent />
+    </>
+  )
 }
 
 export default App

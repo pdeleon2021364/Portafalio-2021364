@@ -5,7 +5,7 @@ import './Certifications.css'
 
 function Certifications() {
   return (
-    <SheetSection id="certificaciones" index={6}>
+    <SheetSection id="certificaciones" index={7}>
       <div className="certifications">
         <div className="certifications__head reveal">
           <span className="section-kicker">Certificaciones</span>

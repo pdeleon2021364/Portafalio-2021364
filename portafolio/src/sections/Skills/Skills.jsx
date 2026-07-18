@@ -8,7 +8,7 @@ function Skills() {
   const [active, setActive] = useState(0)
 
   return (
-    <SheetSection id="habilidades" index={3} tone="dark">
+    <SheetSection id="habilidades" index={4} tone="dark">
       <div className="skills">
         <div className="skills__head reveal">
           <span className="section-kicker skills__kicker">Habilidades</span>
