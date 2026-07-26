@@ -192,49 +192,122 @@
   .dossier__stamp { width: 70px; height: 70px; bottom: 16px; right: 16px; }
 }
 
+@media (max-width: 640px) {
+  .dossier__tabs {
+    padding: 12px 10px;
+    gap: 2px;
+  }
+
+  .dossier__tab {
+    padding: 12px 14px;
+  }
+
+  .dossier__tab-name {
+    font-size: 0.85rem;
+  }
+
+  .dossier__content {
+    padding: 24px 16px 100px;
+  }
+
+  .dossier__watermark {
+    font-size: 6rem;
+    top: -10px;
+  }
+}
+
 @media (max-width: 480px) {
   .dossier__tabs {
-    padding: 10px 8px;
+    padding: 8px 6px;
     gap: 0;
   }
 
   .dossier__tab {
-    padding: 12px 12px;
+    padding: 10px 10px;
   }
 
   .dossier__tab-name {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
+  }
+
+  .dossier__tab-index {
+    font-size: 0.6rem;
   }
 
   .dossier__content {
-    padding: 22px 14px 100px;
+    padding: 18px 12px 90px;
   }
 
   .dossier__panel-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .dossier__panel-desc {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
   }
 
   .dossier__watermark {
-    font-size: 5rem;
-    top: -8px;
+    font-size: 4rem;
+    top: -6px;
   }
 
   .dossier__stamp {
-    width: 56px;
-    height: 56px;
-    bottom: 12px;
-    right: 12px;
+    width: 48px;
+    height: 48px;
+    bottom: 10px;
+    right: 10px;
   }
 
   .dossier__stamp-mark {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   .dossier__stamp-label {
-    font-size: 0.42rem;
+    font-size: 0.38rem;
+  }
+
+  .dossier__ledger {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .dossier__tab {
+    padding: 8px 8px;
+  }
+
+  .dossier__tab-name {
+    font-size: 0.7rem;
+  }
+
+  .dossier__tab-index {
+    font-size: 0.54rem;
+  }
+
+  .dossier__content {
+    padding: 14px 10px 80px;
+  }
+
+  .dossier__panel-title {
+    font-size: 1rem;
+  }
+
+  .dossier__panel-desc {
+    font-size: 0.72rem;
+  }
+
+  .dossier__watermark {
+    display: none;
+  }
+
+  .dossier__stamp {
+    width: 40px;
+    height: 40px;
+    bottom: 8px;
+    right: 8px;
+  }
+
+  .dossier__stamp-mark {
+    font-size: 0.7rem;
   }
 }

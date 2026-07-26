@@ -184,29 +184,45 @@
   .contact__inner {
     grid-template-columns: 1fr;
     gap: 40px;
+    text-align: center;
+  }
+
+  .contact__title {
+    max-width: 100%;
+  }
+
+  .contact__sub {
+    max-width: 100%;
+  }
+
+  .contact__cards {
+    align-items: center;
   }
 }
 
-@media (max-width: 480px) {
-  .contact__title {
-    font-size: 1.5rem;
-  }
-
+@media (max-width: 640px) {
   .contact__3d-card {
     padding: 12px;
     gap: 8px;
-    max-width: 140px;
+    max-width: 130px;
+    transform: rotateX(5deg) rotateY(-5deg);
+    box-shadow: 6px 6px 0 #000;
+  }
+
+  .contact__3d-card:hover {
+    transform: rotateX(3deg) rotateY(1deg) scale(1.03);
+    box-shadow: 12px 12px 0 -3px #e9b50b, 12px 12px 0 0 #000;
   }
 
   .contact__3d-btn {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     padding: 8px;
   }
 
   .contact__3d-btn svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
 
   .contact__3d-label {
@@ -215,10 +231,101 @@
   }
 
   .contact__cards-row {
-    gap: 14px;
+    gap: 12px;
   }
 
   .contact__cards {
-    gap: 14px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 48px 0;
+  }
+
+  .contact__title {
+    font-size: 1.4rem;
+    margin-top: 10px;
+  }
+
+  .contact__sub {
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+
+  .contact__3d-card {
+    padding: 10px;
+    gap: 6px;
+    max-width: 110px;
+    border-width: 3px;
+    transform: rotateX(3deg) rotateY(-3deg);
+    box-shadow: 5px 5px 0 #000;
+  }
+
+  .contact__3d-card:hover {
+    box-shadow: 10px 10px 0 -3px #e9b50b, 10px 10px 0 0 #000;
+  }
+
+  .contact__3d-btn {
+    width: 38px;
+    height: 38px;
+    padding: 6px;
+    border-width: 2px;
+  }
+
+  .contact__3d-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact__3d-label {
+    font-size: 0.5rem;
+    padding: 2px 6px;
+    border-width: 1.5px;
+  }
+
+  .contact__cards-row {
+    gap: 10px;
+  }
+
+  .contact__cards {
+    gap: 10px;
+  }
+
+  .contact__mark {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact__3d-card {
+    max-width: 95px;
+    padding: 8px;
+    gap: 5px;
+  }
+
+  .contact__3d-btn {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+  }
+
+  .contact__3d-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .contact__3d-label {
+    font-size: 0.45rem;
+    padding: 2px 4px;
+  }
+
+  .contact__cards-row {
+    gap: 8px;
+  }
+
+  .contact__cards {
+    gap: 8px;
   }
 }

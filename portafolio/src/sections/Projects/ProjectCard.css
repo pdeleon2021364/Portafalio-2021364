@@ -350,45 +350,95 @@
   .blueprint-card__title { font-size: 1.25rem; }
 }
 
+@media (max-width: 480px) {
+  .blueprint-card__nav {
+    gap: 4px;
+    padding: 4px 6px;
+    bottom: 8px;
+  }
+
+  .blueprint-card__detail {
+    width: 14px;
+    height: 14px;
+    font-size: 0.52rem;
+  }
+
+  .blueprint-card__arrow {
+    width: 18px;
+    height: 18px;
+  }
+
+  .blueprint-card__dwg {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .blueprint-card__corner {
+    width: 12px;
+    height: 12px;
+  }
+
+  .blueprint-card:hover .blueprint-card__corner {
+    width: 14px;
+    height: 14px;
+  }
+
+  .blueprint-card__links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 @media (max-width: 380px) {
   .blueprint-card__media {
     aspect-ratio: 4 / 3;
   }
 
   .blueprint-card__body {
-    padding: 14px 14px 16px;
-    gap: 8px;
+    padding: 12px 12px 14px;
+    gap: 6px;
   }
 
   .blueprint-card__title {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .blueprint-card__desc {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
   }
 
   .blueprint-card__category {
-    font-size: 0.62rem;
+    font-size: 0.58rem;
   }
 
   .blueprint-card__tag {
-    font-size: 0.62rem;
-    padding: 2px 6px;
+    font-size: 0.58rem;
+    padding: 2px 5px;
   }
 
   .blueprint-card__links a {
-    font-size: 0.7rem;
+    font-size: 0.66rem;
   }
 
   .blueprint-card__nav {
-    gap: 6px;
-    padding: 4px 6px;
+    gap: 4px;
+    padding: 3px 4px;
   }
 
   .blueprint-card__detail {
+    width: 12px;
+    height: 12px;
+    font-size: 0.48rem;
+  }
+
+  .blueprint-card__arrow {
     width: 16px;
     height: 16px;
-    font-size: 0.58rem;
+  }
+
+  .blueprint-card__stack-label {
+    font-size: 0.56rem;
   }
 }

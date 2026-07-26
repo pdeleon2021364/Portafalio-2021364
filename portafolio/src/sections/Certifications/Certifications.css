@@ -5,10 +5,18 @@
   gap: 24px;
 }
 
+@media (max-width: 640px) {
+  .certifications__grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 32px;
+  }
+}
+
 @media (max-width: 480px) {
   .certifications__grid {
-    margin-top: 28px;
-    gap: 16px;
+    margin-top: 24px;
+    gap: 14px;
     grid-template-columns: 1fr;
   }
 }

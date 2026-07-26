@@ -307,64 +307,21 @@
   }
 }
 
-@media (max-width: 480px) {
-  .services__item-header {
-    padding: 14px 6px 14px 12px;
-    gap: 10px;
-  }
-
-  .services__item-heading {
-    font-size: 0.88rem;
-  }
-
-  .services__item-desc {
-    padding: 0 12px 16px 36px;
-    font-size: 0.82rem;
-  }
-
-  .services__item-index {
-    font-size: 0.62rem;
-  }
-
-  .services__item-icon {
-    display: none;
+@media (max-width: 640px) {
+  .services__intro {
+    text-align: center;
   }
 
   .services__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .services__desc {
-    font-size: 0.88rem;
+    max-width: 100%;
   }
 
-  .services__tag {
-    padding: 5px 10px;
-    font-size: 0.65rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .services__title {
-    font-size: 1.4rem;
-  }
-
-  .services__item-header {
-    padding: 12px 4px 12px 10px;
-    gap: 8px;
-  }
-
-  .services__item-heading {
-    font-size: 0.78rem;
-  }
-
-  .services__item-desc {
-    padding: 0 10px 14px 28px;
-    font-size: 0.75rem;
-  }
-
-  .services__item-index {
-    font-size: 0.56rem;
+  .services__tags {
+    justify-content: center;
   }
 
   .services__ctas {
@@ -374,6 +331,93 @@
   .services__btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .services__item-header {
+    padding: 16px 6px 16px 14px;
+    gap: 10px;
+  }
+
+  .services__item-icon {
+    display: none;
+  }
+
+  .services__marquee {
+    margin-top: 36px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services__item-header {
+    padding: 12px 4px 12px 10px;
+    gap: 8px;
+  }
+
+  .services__item-heading {
+    font-size: 0.84rem;
+  }
+
+  .services__item-desc {
+    padding: 0 10px 14px 28px;
+    font-size: 0.78rem;
+  }
+
+  .services__item-index {
+    font-size: 0.58rem;
+  }
+
+  .services__title {
+    font-size: 1.6rem;
+  }
+
+  .services__desc {
+    font-size: 0.84rem;
+  }
+
+  .services__tag {
+    padding: 4px 8px;
+    font-size: 0.6rem;
+  }
+
+  .services__marquee-track {
+    animation-duration: 20s;
+  }
+
+  .services__marquee-tag {
+    font-size: 0.72rem;
+    gap: 14px;
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .services__title {
+    font-size: 1.3rem;
+  }
+
+  .services__item-header {
+    padding: 10px 4px 10px 8px;
+    gap: 6px;
+  }
+
+  .services__item-heading {
+    font-size: 0.74rem;
+  }
+
+  .services__item-desc {
+    padding: 0 8px 12px 20px;
+    font-size: 0.72rem;
+  }
+
+  .services__item-index {
+    font-size: 0.52rem;
+  }
+
+  .services__marquee-tag {
+    font-size: 0.65rem;
+    gap: 10px;
+    padding: 0 10px;
   }
 }
 
