@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import ProfileCard from '../../components/ui/ProfileCard.jsx'
 import { personalInfo } from '../../data/personalInfo.js'
+import cv from '../../assets/documents/cv.pdf'
 import './Hero.css'
 
 const greetings = ['Bienvenid@', 'Welcome', 'Bienvenue', 'Willkommen', 'Benvenut@']
@@ -44,7 +45,7 @@ function Hero() {
             <a href="#proyectos" className="hero__btn hero__btn--primary">
               Ver proyectos
             </a>
-            <a href={personalInfo.links.cv} className="hero__btn hero__btn--outline" download>
+            <a href={cv} className="hero__btn hero__btn--outline" download>
               Descargar CV
             </a>
           </div>
