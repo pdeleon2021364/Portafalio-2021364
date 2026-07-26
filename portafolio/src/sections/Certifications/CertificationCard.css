@@ -103,3 +103,34 @@
 .cert-card__download svg {
   flex-shrink: 0;
 }
+
+@media (max-width: 480px) {
+  .cert-card__preview {
+    height: 120px;
+  }
+
+  .cert-card__title {
+    font-size: 0.92rem;
+    padding: 0 16px;
+  }
+
+  .cert-card__issuer {
+    padding: 0 16px;
+    font-size: 0.7rem;
+  }
+
+  .cert-card__top {
+    padding: 12px 16px 0;
+  }
+
+  .cert-card__desc {
+    padding: 0 16px;
+    font-size: 0.78rem;
+  }
+
+  .cert-card__download {
+    margin: 12px 16px 16px;
+    padding: 8px 14px;
+    font-size: 0.68rem;
+  }
+}

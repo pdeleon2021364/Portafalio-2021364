@@ -690,3 +690,94 @@
     padding: 14px 18px;
   }
 }
+
+@media (max-width: 480px) {
+  .bio__orbit-stage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bio__signal-body {
+    padding: 16px 14px 18px;
+  }
+
+  .bio__paragraph {
+    font-size: 0.83rem;
+    line-height: 1.7;
+  }
+
+  .bio__matrix-header {
+    padding: 12px 14px;
+  }
+
+  .bio__matrix-cell {
+    padding: 8px 10px;
+  }
+
+  .bio__matrix-cell-label {
+    font-size: 0.55rem;
+  }
+
+  .bio__matrix-cell-value {
+    font-size: 0.72rem;
+  }
+
+  .bio__matrix-cap-name {
+    font-size: 0.68rem;
+  }
+
+  .bio__matrix-footer {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .bio__orbit-stage {
+    width: 160px;
+    height: 160px;
+  }
+
+  .bio__orbit-nucleus {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bio__orbit-nucleus span {
+    font-size: 0.72rem;
+  }
+
+  .bio__orbit-node {
+    width: 60px;
+    padding: 5px 4px;
+    margin-left: -30px;
+    margin-top: -20px;
+  }
+
+  .bio__orbit-node-label {
+    font-size: 0.56rem;
+  }
+
+  .bio__paragraph {
+    font-size: 0.78rem;
+  }
+
+  .bio__matrix-data {
+    padding: 0 10px;
+  }
+
+  .bio__matrix-cell {
+    padding: 6px 8px;
+  }
+
+  .bio__matrix-cell-value {
+    max-width: 50%;
+    font-size: 0.66rem;
+  }
+
+  .bio__matrix-greeting {
+    display: none;
+  }
+}

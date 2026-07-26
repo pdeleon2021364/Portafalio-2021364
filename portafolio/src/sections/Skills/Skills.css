@@ -191,3 +191,50 @@
   .dossier__panel-title { font-size: 1.35rem; }
   .dossier__stamp { width: 70px; height: 70px; bottom: 16px; right: 16px; }
 }
+
+@media (max-width: 480px) {
+  .dossier__tabs {
+    padding: 10px 8px;
+    gap: 0;
+  }
+
+  .dossier__tab {
+    padding: 12px 12px;
+  }
+
+  .dossier__tab-name {
+    font-size: 0.82rem;
+  }
+
+  .dossier__content {
+    padding: 22px 14px 100px;
+  }
+
+  .dossier__panel-title {
+    font-size: 1.15rem;
+  }
+
+  .dossier__panel-desc {
+    font-size: 0.8rem;
+  }
+
+  .dossier__watermark {
+    font-size: 5rem;
+    top: -8px;
+  }
+
+  .dossier__stamp {
+    width: 56px;
+    height: 56px;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .dossier__stamp-mark {
+    font-size: 1rem;
+  }
+
+  .dossier__stamp-label {
+    font-size: 0.42rem;
+  }
+}

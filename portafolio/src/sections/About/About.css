@@ -406,3 +406,90 @@
     padding: 28px 20px 22px;
   }
 }
+
+@media (max-width: 480px) {
+  .ide__tabs {
+    overflow-x: auto;
+  }
+
+  .ide__tab {
+    padding: 10px 12px;
+    font-size: 0.68rem;
+  }
+
+  .ide__code {
+    font-size: 0.7rem;
+    padding: 12px 12px;
+  }
+
+  .ide__gutter {
+    padding: 12px 6px;
+    font-size: 0.7rem;
+  }
+
+  .ide__desc {
+    padding: 12px 14px;
+    font-size: 0.78rem;
+  }
+
+  .ide__terminal {
+    padding: 12px 14px;
+    font-size: 0.72rem;
+  }
+
+  .ide__statusbar {
+    padding: 6px 12px;
+    font-size: 0.6rem;
+  }
+
+  .about__hero-stat {
+    padding: 22px 14px 18px;
+  }
+
+  .about__hero-stat-value {
+    font-size: 2.2rem;
+  }
+
+  .about__card-facts {
+    padding: 14px 14px 16px;
+    gap: 10px;
+  }
+
+  .about__card-fact dt {
+    font-size: 0.6rem;
+  }
+
+  .about__card-fact dd {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .ide__code {
+    font-size: 0.65rem;
+    padding: 10px 8px;
+  }
+
+  .ide__gutter {
+    display: none;
+  }
+
+  .ide__tab {
+    padding: 8px 10px;
+    font-size: 0.62rem;
+  }
+
+  .ide__desc {
+    padding: 10px 10px;
+    font-size: 0.72rem;
+  }
+
+  .ide__terminal {
+    padding: 10px 10px;
+    font-size: 0.66rem;
+  }
+
+  .about__hero-stat-value {
+    font-size: 1.8rem;
+  }
+}

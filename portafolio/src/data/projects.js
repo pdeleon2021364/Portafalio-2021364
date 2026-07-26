@@ -19,6 +19,10 @@ import restauranteDashboard from '../sections/Projects/imagesprojects/DashboradR
 import restauranteFood from '../sections/Projects/imagesprojects/RestaurnteFoto3.png'
 import restaurantePerfil from '../sections/Projects/imagesprojects/PerfilFtoo4.png'
 
+import serviciosLogin from '../sections/Projects/imagesprojects/login_16x9.png'
+import serviciosDashboard from '../sections/Projects/imagesprojects/dashboard_16x9.png'
+import serviciosMapa from '../sections/Projects/imagesprojects/mapa_16x9.png'
+
 export const projects = [
   {
     title: 'KinalToys',
@@ -30,7 +34,7 @@ export const projects = [
     tags: ['Java 21', 'Hibernate', 'JPA', 'MySQL', 'HTML', 'CSS', 'Maven'],
     images: [kinal1, kinal2, kinal3, kinal4, kinal5],
     link: '',
-    repository: 'https://github.com/jrealiquez-2021549/KinalToys-Project',
+    repository: 'https://github.com/jrealiquez-2021549/KinalToys-Project.git',
   },
   {
     title: 'Gestión de Servicios',
@@ -40,7 +44,7 @@ export const projects = [
     learned:
       'Arquitectura modular en Node.js/Express, PostgreSQL + MongoDB, autenticación y autorización con JWT y RBAC, documentación con Swagger, y diseño de APIs versionadas.',
     tags: ['Node.js', 'Express', 'JWT', 'PostgreSQL', 'MongoDB', 'Swagger'],
-    images: [],
+    images: [serviciosLogin, serviciosDashboard, serviciosMapa],
     link: '',
     repository: 'https://github.com/jcoyote-2024037/GestionServicios.git',
   },
@@ -53,7 +57,7 @@ export const projects = [
       'Diseño de microservicios con responsabilidades delimitadas, comunicación vía APIs, autenticación con JWT, y orquestación de servicios independientes.',
     tags: ['React', 'Node.js', '.NET 8', 'PostgreSQL', 'MongoDB', 'Docker'],
     images: [bancoLogin, bancoDashboard, bancoProductos, bancoPerfil],
-    link: '',
+    link: 'https://gestion-bancario.vercel.app/',
     repository: 'https://github.com/pdeleon2021364/GestionBancario.git',
   },
   {
@@ -66,7 +70,7 @@ export const projects = [
     tags: ['Java 21', 'Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Thymeleaf', 'MySQL', 'JWT', 'Stripe', 'OAuth2', 'Maven'],
     images: [sireco1, sireco2, sireco3, sireco4],
     link: '',
-    repository: '',
+    repository: 'https://github.com/eorellana-2022149/SIRECO.git',
   },
   {
     title: 'Gestión de Restaurantes',
@@ -77,7 +81,7 @@ export const projects = [
       'Arquitectura de microservicios con Node.js y .NET, integración de MongoDB y PostgreSQL, autenticación JWT, Docker, y frontend con React, TailwindCSS y Zustand.',
     tags: ['Node.js', 'Express', 'React', '.NET', 'MongoDB', 'PostgreSQL', 'Docker', 'JWT', 'TailwindCSS'],
     images: [restauranteLogin, restauranteDashboard, restauranteFood, restaurantePerfil],
-    link: '',
+    link: 'https://desplieguerestaurante.vercel.app/',
     repository: '',
   },
 ]

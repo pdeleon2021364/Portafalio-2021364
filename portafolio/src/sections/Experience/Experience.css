@@ -196,4 +196,21 @@
     align-items: flex-start;
     gap: 6px;
   }
+
+  .experience__title {
+    font-size: 0.95rem;
+  }
+
+  .experience__desc {
+    font-size: 0.8rem;
+  }
+
+  .experience__tags {
+    gap: 4px;
+  }
+
+  .experience__tag {
+    font-size: 0.58rem;
+    padding: 2px 8px;
+  }
 }

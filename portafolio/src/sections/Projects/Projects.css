@@ -77,4 +77,8 @@
     gap: 22px;
     margin-top: 28px;
   }
+
+  .blueprint-projects__title {
+    font-size: 1.6rem;
+  }
 }

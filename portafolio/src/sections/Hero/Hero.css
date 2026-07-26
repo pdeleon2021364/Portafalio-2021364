@@ -204,15 +204,54 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 80px 0 50px;
+  }
+
   .hero__actions {
     flex-direction: column;
   }
 
   .hero__btn {
     justify-content: center;
+    width: 100%;
   }
 
   .hero__manifesto {
     padding: 18px 20px;
+  }
+
+  .hero__manifesto p {
+    font-size: 0.88rem;
+  }
+
+  .hero__name {
+    font-size: 1.8rem;
+  }
+
+  .hero__card-col > * {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 70px 0 40px;
+  }
+
+  .hero__name {
+    font-size: 1.5rem;
+  }
+
+  .hero__card-col > * {
+    max-width: 220px;
+  }
+
+  .hero__manifesto p {
+    font-size: 0.82rem;
+  }
+
+  .hero__card-col > * {
+    max-width: 240px;
   }
 }
