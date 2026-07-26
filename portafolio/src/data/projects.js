@@ -1,72 +1,70 @@
-// ============================================================
-// DATA · Proyectos
-// "image" es opcional: si no la defines, la tarjeta muestra un
-// marcador con las iniciales del proyecto. Para usar una imagen,
-// colócala en /src/assets/img/projects/ e impórtala arriba, ej:
-//
-//   import miProyecto from '../assets/img/projects/mi-proyecto.png'
-//
-// y luego úsala como image: miProyecto
-// ============================================================
+import kinal1 from '../sections/Projects/imagesprojects/LoginKinalTOysPAGINA1.png'
+import kinal2 from '../sections/Projects/imagesprojects/DasboardAdminPAGINA2.png'
+import kinal3 from '../sections/Projects/imagesprojects/dasboard3PAGINA3.png'
+import kinal4 from '../sections/Projects/imagesprojects/dashboardPAGINA4.png'
+import kinal5 from '../sections/Projects/imagesprojects/DASBORADPAGINA5.png'
+
+import bancoLogin from '../sections/Projects/imagesprojects/LoginBancoFoto1.png'
+import bancoDashboard from '../sections/Projects/imagesprojects/DashBoardFtoo4.png'
+import bancoProductos from '../sections/Projects/imagesprojects/ProductosFiancierosFtoo3.png'
+import bancoPerfil from '../sections/Projects/imagesprojects/PerfilFtoo2.png'
+
+import sireco1 from '../sections/Projects/imagesprojects/SirecoFOTO1.png'
+import sireco2 from '../sections/Projects/imagesprojects/SirecoFOTO2.png'
+import sireco3 from '../sections/Projects/imagesprojects/SIRECOFOTO3.png'
+import sireco4 from '../sections/Projects/imagesprojects/SIRECOFOTO4.png'
+
+import restauranteLogin from '../sections/Projects/imagesprojects/loginRestauranteFtoo1.jpg'
+import restauranteDashboard from '../sections/Projects/imagesprojects/DashboradRestuarnateFtoo2.png'
+import restauranteFood from '../sections/Projects/imagesprojects/RestaurnteFoto3.png'
+import restaurantePerfil from '../sections/Projects/imagesprojects/PerfilFtoo4.png'
 
 export const projects = [
   {
     title: 'KinalToys',
     category: 'Aplicación web + Java Desktop',
     description:
-      'Sistema de gestión para tienda de juguetes con frontend web (HTML/CSS), backend Java con Hibernate y JPA, login de usuarios, catálogo de juguetes, carrito de compras, facturación y noticias.',
+      'Aplicación web y de escritorio para la gestión integral de una tienda de juguetes. Permite a los clientes explorar un catálogo de productos, agregar artículos a un carrito de compras y realizar facturación, mientras que los administradores pueden administrar el inventario, usuarios y publicar noticias. Desarrollado con Java, Hibernate, JPA, MySQL, HTML y CSS.',
     learned:
       'Arquitectura por capas con Java, Hibernate y JPA. CRUD completo con 8 entidades relacionales. Trabajo en equipo con Git.',
     tags: ['Java 21', 'Hibernate', 'JPA', 'MySQL', 'HTML', 'CSS', 'Maven'],
-    image: null,
+    images: [kinal1, kinal2, kinal3, kinal4, kinal5],
     link: '',
     repository: 'https://github.com/jrealiquez-2021549/KinalToys-Project',
-  },
-  {
-    title: 'Gestión Bancaria',
-    category: 'Arquitectura de microservicios',
-    description:
-      'Plataforma bancaria modular con frontend en React + Vite, microservicios en Node.js, servicio de autenticación en C# .NET 8, y bases de datos PostgreSQL y MongoDB.',
-    learned:
-      'Diseño de microservicios con responsabilidades delimitadas, comunicación vía APIs, autenticación con JWT, y orquestación de servicios independientes.',
-    tags: ['React', 'Node.js', '.NET 8', 'PostgreSQL', 'MongoDB', 'Docker'],
-    image: null,
-    link: '',
-    repository: 'https://github.com/pdeleon2021364/GestionBancario.git',
-  },
-  {
-    title: 'Agenda de Contactos',
-    category: 'API REST',
-    description:
-      'API RESTful para gestión de contactos personales con operaciones CRUD, validaciones, y persistencia en PostgreSQL. Construida con Spring Boot siguiendo el patrón MVC.',
-    learned:
-      'Spring Boot, JPA e Hibernate, diseño de APIs REST, manejo de excepciones y validación de datos con Jakarta Validation.',
-    tags: ['Spring Boot', 'Java', 'JPA', 'Hibernate', 'PostgreSQL'],
-    image: null,
-    link: '',
-    repository: 'https://github.com/pdeleon2021364/AgendaContactos.git',
   },
   {
     title: 'Gestión de Servicios',
     category: 'API REST con Node.js',
     description:
-      'Backend para marketplace de servicios con autenticación JWT, roles (USER y ADMIN), gestión de solicitudes, reseñas, favoritos, reportes, insignias y notificaciones por correo.',
+      'Backend para un marketplace de servicios donde los usuarios pueden publicar, buscar y contratar distintos servicios. Incluye sistema de reseñas, favoritos, reportes, notificaciones por correo y un sistema de insignias para los mejores proveedores. Desarrollado con Node.js, Express, JWT para autenticación, PostgreSQL, MongoDB y documentado con Swagger.',
     learned:
       'Arquitectura modular en Node.js/Express, PostgreSQL + MongoDB, autenticación y autorización con JWT y RBAC, documentación con Swagger, y diseño de APIs versionadas.',
     tags: ['Node.js', 'Express', 'JWT', 'PostgreSQL', 'MongoDB', 'Swagger'],
-    image: null,
+    images: [],
     link: '',
     repository: 'https://github.com/jcoyote-2024037/GestionServicios.git',
+  },
+  {
+    title: 'Gestión Bancaria',
+    category: 'Arquitectura de microservicios',
+    description:
+      'Plataforma de gestión bancaria diseñada para facilitar la administración de cuentas, transacciones y productos financieros de manera segura. El sistema permite a los usuarios realizar operaciones bancarias y consultar su información, mientras que los administradores pueden gestionar clientes, cuentas y movimientos. Para garantizar la seguridad y el rendimiento, fue desarrollado con React, Node.js, .NET 8, PostgreSQL, MongoDB y Docker.',
+    learned:
+      'Diseño de microservicios con responsabilidades delimitadas, comunicación vía APIs, autenticación con JWT, y orquestación de servicios independientes.',
+    tags: ['React', 'Node.js', '.NET 8', 'PostgreSQL', 'MongoDB', 'Docker'],
+    images: [bancoLogin, bancoDashboard, bancoProductos, bancoPerfil],
+    link: '',
+    repository: 'https://github.com/pdeleon2021364/GestionBancario.git',
   },
   {
     title: 'SIRECO',
     category: 'Aplicación web',
     description:
-      'Plataforma web de gestión ambiental y logística para reciclaje y recolección de residuos, con OAuth2/Google, roles de usuario, pagos con Stripe, facturación, rutas de recolección, y calendario de extracción.',
+      'Plataforma web enfocada en la gestión ambiental del reciclaje y la recolección de residuos. Permite a los usuarios agendar extracciones, seguir rutas de recolección, realizar pagos y acceder a su facturación. Desarrollada con Java, Spring Boot, Thymeleaf, MySQL, autenticación con Google y pagos integrados con Stripe.',
     learned:
       'Spring Boot con MVC, JPA y Security, OAuth2 con Google, Stripe, JWT, Thymeleaf, y Maven para despliegue.',
     tags: ['Java 21', 'Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Thymeleaf', 'MySQL', 'JWT', 'Stripe', 'OAuth2', 'Maven'],
-    image: null,
+    images: [sireco1, sireco2, sireco3, sireco4],
     link: '',
     repository: '',
   },
@@ -74,11 +72,11 @@ export const projects = [
     title: 'Gestión de Restaurantes',
     category: 'Arquitectura de microservicios',
     description:
-      'Sistema completo de gestión de restaurantes con microservicios backend (Node.js/Express), autenticación en .NET, y frontend React + Vite. Cubre menús, pedidos, reservas, delivery, reseñas, reportes y administración de eventos.',
+      'Sistema completo para la administración de restaurantes que cubre desde el menú y los pedidos hasta las reservas, delivery, reseñas de clientes y organización de eventos. Los clientes pueden hacer pedidos y reservaciones, mientras que los administradores controlan todo el negocio desde un panel. Fue desarrollado con Node.js, Express, React, .NET, MongoDB, PostgreSQL y Docker.',
     learned:
       'Arquitectura de microservicios con Node.js y .NET, integración de MongoDB y PostgreSQL, autenticación JWT, Docker, y frontend con React, TailwindCSS y Zustand.',
     tags: ['Node.js', 'Express', 'React', '.NET', 'MongoDB', 'PostgreSQL', 'Docker', 'JWT', 'TailwindCSS'],
-    image: null,
+    images: [restauranteLogin, restauranteDashboard, restauranteFood, restaurantePerfil],
     link: '',
     repository: '',
   },

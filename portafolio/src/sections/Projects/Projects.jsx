@@ -6,16 +6,17 @@ import './Projects.css'
 function Projects() {
   return (
     <SheetSection id="proyectos" index={5}>
-      <div className="projects">
-        <div className="projects__head reveal">
-          <span className="section-kicker">Proyectos</span>
-          <h2 className="section-title">Trabajo construido</h2>
-          <p className="section-sub">
-            Una selección de proyectos: qué hacen, qué aprendí y dónde verlos.
+      <div className="blueprint-projects">
+        <div className="blueprint-projects__head reveal">
+          <span className="blueprint-projects__stamp">Sala de planos</span>
+          <h2 className="blueprint-projects__title">Planos de lo construido</h2>
+          <p className="blueprint-projects__sub">
+            Cada proyecto, tendido como un plano técnico. Pasa el cursor sobre una vista
+            para revelar el sistema terminado.
           </p>
         </div>
 
-        <div className="projects__grid">
+        <div className="blueprint-projects__grid">
           {projects.map((project, i) => (
             <ProjectCard key={project.title} project={project} index={i} />
           ))}

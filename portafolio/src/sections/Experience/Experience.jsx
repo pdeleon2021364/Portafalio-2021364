@@ -1,34 +1,74 @@
+import { useEffect, useRef } from 'react'
 import SheetSection from '../../components/layout/SheetSection.jsx'
 import { experience } from '../../data/experience.js'
 import './Experience.css'
 
 function Experience() {
+  const listRef = useRef(null)
+
+  useEffect(() => {
+    const node = listRef.current
+    if (!node) return
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          node.classList.add('experience__list--active')
+          obs.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    obs.observe(node)
+    return () => obs.disconnect()
+  }, [])
+
   return (
     <SheetSection id="experiencia" index={6}>
       <div className="experience">
-        <div className="experience__head reveal">
-          <span className="section-kicker">Experiencia</span>
-          <h2 className="section-title">Línea de tiempo</h2>
-          <p className="section-sub">Formación y práctica, en orden cronológico.</p>
+        <div className="experience__head">
+          <span className="section-kicker">Trayectoria</span>
+          <h2 className="section-title">Evolución profesional</h2>
+          <p className="section-sub">De los fundamentos a la experiencia práctica.</p>
         </div>
 
-        <ol className="experience__list">
+        <div className="experience__timeline" ref={listRef}>
           {experience.map((item, i) => (
-            <li
+            <div
               key={item.title}
-              className="experience__item reveal"
-              style={{ transitionDelay: `${i * 0.06}s` }}
+              className="experience__card"
+              style={{ '--delay': `${i * 0.2}s` }}
             >
-              <div className="experience__period label-tag">{item.period}</div>
-              <div className="experience__dot" aria-hidden="true" />
-              <div className="experience__content">
-                <h3>{item.title}</h3>
-                <p className="experience__place">{item.place}</p>
-                <p className="experience__desc">{item.description}</p>
+              {/* Rail */}
+              <div className="experience__rail">
+                <div className="experience__rail-line" />
+                <div className="experience__rail-node">
+                  <span className="experience__rail-dot" />
+                </div>
               </div>
-            </li>
+
+              {/* Content */}
+              <div className="experience__content">
+                <div className="experience__content-header">
+                  <span className="experience__period">{item.period}</span>
+                  <span className="experience__place">{item.place}</span>
+                </div>
+
+                <h3 className="experience__title">{item.title}</h3>
+                <p className="experience__desc">{item.description}</p>
+
+                {item.tags && (
+                  <div className="experience__tags">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="experience__tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           ))}
-        </ol>
+        </div>
       </div>
     </SheetSection>
   )

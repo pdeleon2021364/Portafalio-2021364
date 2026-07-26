@@ -60,10 +60,7 @@ function Skills() {
                   ))}
                 </ul>
 
-                <div className="dossier__stamp" aria-hidden="true">
-                  <span className="dossier__stamp-mark">AC</span>
-                  <span className="dossier__stamp-label">verificado · 2026</span>
-                </div>
+
               </div>
             ))}
           </div>

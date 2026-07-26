@@ -1,29 +1,31 @@
-// ============================================================
-// DATA · Certificaciones y logros
-// "document" es opcional: ruta a un PDF/imagen en
-// /src/assets/documents/ si quieres que se pueda descargar/ver.
-// ============================================================
+import powerbiImg from '../assets/documents/PowerBI.png'
+import pythonImg from '../assets/documents/ITPhytonCertificate.png'
+import ciscoPdf from '../assets/documents/CiscoCertificado.pdf'
+import ciscoImg from '../assets/documents/CiscoITEssentials.png'
 
 export const certifications = [
   {
-    title: 'Nombre de la certificación',
-    issuer: 'Institución emisora',
-    date: '2026',
-    description: 'Breve descripción de lo que certifica.',
-    document: null,
+    title: 'Cisco IT Essentials',
+    issuer: 'Cisco Networking Academy',
+    date: '2024',
+    description: 'Fundamentos de hardware y software de computadoras, redes, seguridad y resolución de problemas.',
+    document: ciscoPdf,
+    image: ciscoImg,
   },
   {
-    title: 'Nombre de la certificación',
-    issuer: 'Institución emisora',
-    date: '2026',
-    description: 'Breve descripción de lo que certifica.',
-    document: null,
+    title: 'Python Certificate',
+    issuer: 'IT Academy',
+    date: '2024',
+    description: 'Programación en Python: estructuras de datos, control de flujo, funciones y desarrollo de scripts.',
+    document: pythonImg,
+    image: pythonImg,
   },
   {
-    title: 'Nombre de la certificación',
-    issuer: 'Institución emisora',
+    title: 'Power BI',
+    issuer: 'Microsoft',
     date: '2026',
-    description: 'Breve descripción de lo que certifica.',
-    document: null,
+    description: 'Creación de informes interactivos, modelado de datos y visualización con Power BI Desktop.',
+    document: powerbiImg,
+    image: powerbiImg,
   },
 ]

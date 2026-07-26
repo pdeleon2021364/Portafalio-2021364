@@ -1,135 +1,351 @@
-.project-card {
+.blueprint-card {
+  --bp-bg-deep: #0d0d0d;
+  --bp-bg-mid: #1a1a1a;
+  --bp-line: #e5e7eb;
+  --bp-line-dim: rgba(229, 231, 235, 0.15);
+  --bp-accent: #818cf8;
+  --bp-orange: #ff6b35;
+
+  position: relative;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    145deg,
-    rgba(27, 55, 85, 0.7),
-    rgba(15, 30, 48, 0.85)
-  );
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--bp-bg-mid), var(--bp-bg-deep));
+  border: 1px solid var(--bp-line-dim);
+  outline: 1px solid rgba(129, 140, 248, 0.06);
+  outline-offset: -6px;
+  border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.project-card:hover {
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+.blueprint-card:hover {
+  border-color: rgba(129, 140, 248, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* ── media ────────────────────────────── */
+/* ── registration corner marks ─────────── */
 
-.project-card__media {
+.blueprint-card__corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  z-index: 3;
+  pointer-events: none;
+  transition: border-color 0.35s ease, width 0.35s ease, height 0.35s ease;
+}
+
+.blueprint-card__corner--tl { top: 8px; left: 8px; border-top: 2px solid var(--bp-accent); border-left: 2px solid var(--bp-accent); }
+.blueprint-card__corner--tr { top: 8px; right: 8px; border-top: 2px solid var(--bp-accent); border-right: 2px solid var(--bp-accent); }
+.blueprint-card__corner--bl { bottom: 8px; left: 8px; border-bottom: 2px solid var(--bp-accent); border-left: 2px solid var(--bp-accent); }
+.blueprint-card__corner--br { bottom: 8px; right: 8px; border-bottom: 2px solid var(--bp-accent); border-right: 2px solid var(--bp-accent); }
+
+.blueprint-card:hover .blueprint-card__corner {
+  border-color: var(--bp-orange);
+  width: 20px;
+  height: 20px;
+}
+
+/* ── media ──────────────────────────────── */
+
+.blueprint-card__media {
   position: relative;
   aspect-ratio: 16 / 10;
-  background:
-    linear-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212, 175, 55, 0.12) 1px, transparent 1px),
-    rgba(15, 30, 48, 0.6);
-  background-size: 24px 24px;
+  overflow: hidden;
+  background: var(--bp-bg-deep);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.project-card__media img {
+.blueprint-card__img-wrapper { position: absolute; inset: 0; }
+
+.blueprint-card__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--bp-bg-deep);
+  filter: grayscale(1) brightness(1.15) contrast(1.05);
+  transition: filter 0.6s ease;
 }
 
-.project-card__placeholder span {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 600;
-  color: rgba(212, 175, 55, 0.3);
+/* declassify: colour bleeds back in on hover */
+.blueprint-card:hover .blueprint-card__img {
+  filter: grayscale(0) brightness(1) contrast(1);
 }
 
-.project-card__index {
+.blueprint-card__tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(13, 13, 13, 0.85), rgba(26, 26, 26, 0.5));
+  mix-blend-mode: color;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.blueprint-card:hover .blueprint-card__tint { opacity: 0; }
+
+.blueprint-card__img--slide-next { animation: bpSlideRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.blueprint-card__img--slide-prev { animation: bpSlideLeft 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+@keyframes bpSlideRight {
+  0% { opacity: 0; transform: translateX(36px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bpSlideLeft {
+  0% { opacity: 0; transform: translateX(-36px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ── progress bar ──────────────────────── */
+
+.blueprint-card__progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(129, 140, 248, 0.1);
+  z-index: 2;
+}
+
+.blueprint-card__progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bp-orange), var(--bp-accent));
+  width: 0;
+  animation: bpProgress 6s linear forwards;
+}
+
+.blueprint-card__progress-bar--paused {
+  animation-play-state: paused;
+}
+
+@keyframes bpProgress {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* ── drawing number badge ───────────────── */
+
+.blueprint-card__dwg {
   position: absolute;
   top: 14px;
   left: 14px;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #d4af37;
-  opacity: 0.7;
+  z-index: 2;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--bp-accent);
+  background: rgba(13, 13, 13, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 3px 8px;
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  border-radius: 2px;
 }
 
-/* ── body ─────────────────────────────── */
+/* ── gallery nav: prev / detail letters / next ─ */
 
-.project-card__body {
+.blueprint-card__nav {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(13, 13, 13, 0.78);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(129, 140, 248, 0.15);
+  border-radius: 3px;
+  padding: 6px 10px;
+  z-index: 2;
+}
+
+.blueprint-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: transparent;
+  border: 1px solid rgba(229, 231, 235, 0.25);
+  color: var(--bp-line);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.blueprint-card__arrow:hover { border-color: var(--bp-orange); color: var(--bp-orange); }
+.blueprint-card__arrow:active { transform: scale(0.92); }
+
+.blueprint-card__details { display: flex; gap: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; }
+
+.blueprint-card__detail {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(229, 231, 235, 0.2);
+  color: #9ca3af;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.blueprint-card__detail:hover { border-color: var(--bp-accent); color: var(--bp-accent); }
+
+.blueprint-card__detail--active {
+  background: var(--bp-orange);
+  border-color: var(--bp-orange);
+  color: #0d0d0d;
+  font-weight: 600;
+}
+
+/* ── placeholder ─────────────────────────── */
+
+.blueprint-card__placeholder span {
+  font-family: 'Big Shoulders Stencil', sans-serif;
+  font-size: 3rem;
+  color: rgba(129, 140, 248, 0.2);
+  letter-spacing: 0.05em;
+}
+
+/* ── body ─────────────────────────────────── */
+
+.blueprint-card__body {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 24px 26px;
   gap: 10px;
+  padding: 24px 26px 22px;
 }
 
-.project-card__title {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--cream);
+.blueprint-card__body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 26px;
+  right: 26px;
+  height: 1px;
+  background-image: repeating-linear-gradient(90deg, var(--bp-line-dim) 0, var(--bp-line-dim) 6px, transparent 6px, transparent 12px);
 }
 
-.project-card__desc {
-  color: #cdd6de;
-  font-size: 0.88rem;
-  line-height: 1.55;
+.blueprint-card__heading { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+
+.blueprint-card__category {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--bp-accent);
+  opacity: 0.85;
+}
+
+.blueprint-card__title {
+  font-family: 'Big Shoulders Stencil', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--bp-line);
+}
+
+.blueprint-card__desc {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  line-height: 1.6;
   max-width: 60ch;
 }
 
-.project-card__learned {
-  font-size: 0.82rem;
-  color: #9fb0bd;
-  border-left: 2px solid rgba(212, 175, 55, 0.35);
+.blueprint-card__note {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.83rem;
+  color: #9ca3af;
+  border-left: 2px dashed rgba(255, 107, 53, 0.4);
   padding-left: 12px;
   line-height: 1.5;
 }
 
-.project-card__learned span {
-  font-family: var(--font-mono);
+.blueprint-card__note span {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.65rem;
-  color: #d4af37;
+  color: var(--bp-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-.project-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 4px;
+/* ── stack / ruler / tags ────────────────── */
+
+.blueprint-card__stack { margin-top: 4px; display: flex; flex-direction: column; gap: 6px; }
+
+.blueprint-card__stack-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b7280;
 }
 
-.project-card__links {
+.blueprint-card__ruler {
+  height: 5px;
+  margin-bottom: 2px;
+  background-image: repeating-linear-gradient(to right, var(--bp-line-dim) 0, var(--bp-line-dim) 1px, transparent 1px, transparent 7px);
+  background-position: bottom;
+  background-size: 100% 5px;
+  background-repeat: repeat-x;
+  opacity: 0.7;
+}
+
+.blueprint-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.blueprint-card__tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--bp-accent);
+  background: rgba(129, 140, 248, 0.06);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  border-radius: 2px;
+  padding: 3px 8px;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+}
+
+.blueprint-card__tag:hover {
+  border-color: var(--bp-orange);
+  color: var(--bp-orange);
+  background: rgba(255, 107, 53, 0.06);
+}
+
+/* ── links ────────────────────────────────── */
+
+.blueprint-card__links {
   margin-top: auto;
   padding-top: 14px;
   display: flex;
-  gap: 20px;
-  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  gap: 22px;
+  border-top: 1px solid var(--bp-line-dim);
 }
 
-.project-card__links a {
-  font-family: var(--font-mono);
+.blueprint-card__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.78rem;
-  color: #d4af37;
+  color: var(--bp-orange);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, gap 0.2s ease;
 }
 
-.project-card__links a:hover {
-  opacity: 0.65;
-}
+.blueprint-card__links a:hover { opacity: 0.7; gap: 7px; }
 
 @media (max-width: 600px) {
-  .project-card__body {
-    padding: 20px;
-  }
-
-  .project-card__title {
-    font-size: 1.05rem;
-  }
+  .blueprint-card__body { padding: 18px 20px; }
+  .blueprint-card__title { font-size: 1.25rem; }
 }

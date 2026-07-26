@@ -39,7 +39,7 @@
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 56px;
-  align-items: start;
+  align-items: center;
 }
 
 .contact__kicker {
@@ -70,40 +70,85 @@
   flex-wrap: wrap;
 }
 
-.contact__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(109, 129, 150, 0.2);
-}
+/* ── Social cards grid ───────────────── */
 
-.contact__links li {
-  border-bottom: 1px solid rgba(109, 129, 150, 0.15);
-}
-
-.contact__links a {
+.contact__socials {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact__social-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.contact__social-card {
+  width: 110px;
+  height: 110px;
+  display: flex;
   align-items: center;
-  padding: 16px 4px;
+  justify-content: center;
+  border: 2px solid #2d2d2d;
+  box-shadow: 6px 6px 0px #2d2d2d;
   text-decoration: none;
-  color: var(--on-ink);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  transition: color 0.15s ease, padding-left 0.15s ease;
+  color: #2d2d2d;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-.contact__links a:hover {
-  color: var(--accent);
-  padding-left: 10px;
+/* Row 1: Instagram (tl), Email (center), LinkedIn (tr) */
+.contact__social-card--tl { border-radius: 20px 5px 5px 5px; padding-top: 8px; padding-left: 8px; }
+.contact__social-card--tr { border-radius: 5px 20px 5px 5px; padding-top: 8px; padding-right: 8px; }
+
+/* Row 2: Computrabajo (bl), GitHub (center), WhatsApp (br) */
+.contact__social-card--bl { border-radius: 5px 5px 5px 20px; padding-bottom: 8px; padding-left: 8px; }
+.contact__social-card--br { border-radius: 5px 5px 20px 5px; padding-bottom: 8px; padding-right: 8px; }
+
+.contact__social-card svg {
+  transition: fill 0.2s ease-in-out, color 0.2s ease-in-out;
+  width: 38px;
+  height: 38px;
 }
 
-.contact__links-arrow {
-  color: var(--on-ink-soft);
+/* Icon colors */
+.contact__social-card--tl svg { fill: #e1306c; }
+.contact__social-card--email { color: #ea4335; }
+.contact__social-card--email svg { stroke: #ea4335; fill: none; }
+.contact__social-card--tr svg { fill: #0a66c2; }
+.contact__social-card--ct svg { fill: #0066ff; }
+.contact__social-card--bl svg { fill: #333; }
+.contact__social-card--br svg { fill: #25d366; }
+
+.contact__social-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0px #2d2d2d;
+  cursor: pointer;
+}
+
+/* Hover backgrounds */
+.contact__social-card--tl:hover { background-color: #fd1d1d; }
+.contact__social-card--email:hover { background-color: #ea4335; }
+.contact__social-card--tr:hover { background-color: #0a66c2; }
+.contact__social-card--ct:hover { background-color: #0066ff; }
+.contact__social-card--bl:hover { background-color: #f7b733; }
+.contact__social-card--br:hover { background-color: #25d366; }
+
+.contact__social-card:hover svg {
+  fill: white;
+}
+
+.contact__social-card--email:hover svg {
+  stroke: white;
 }
 
 @media (max-width: 860px) {
   .contact__inner {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact__socials {
+    justify-self: start;
   }
 }

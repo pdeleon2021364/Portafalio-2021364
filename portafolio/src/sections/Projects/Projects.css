@@ -1,13 +1,80 @@
-.projects__head { max-width: 62ch; }
+.blueprint-projects {
+  --bp-bg-deep: #0d0d0d;
+  --bp-bg-mid: #1a1a1a;
+  --bp-line: #e5e7eb;
+  --bp-line-dim: rgba(229, 231, 235, 0.15);
+  --bp-accent: #818cf8;
+  --bp-orange: #ff6b35;
+  --bp-grid: rgba(129, 140, 248, 0.06);
+  position: relative;
+  padding: 4px 0;
+}
 
-.projects__grid {
+/* faint drafting-table grid behind the whole section */
+.blueprint-projects::before {
+  content: '';
+  position: absolute;
+  inset: -24px -5vw;
+  background-image:
+    linear-gradient(var(--bp-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: -1;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, #000 40%, transparent 90%);
+}
+
+.blueprint-projects__head { max-width: 62ch; }
+
+.blueprint-projects__stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bp-orange);
+  border: 1px solid rgba(255, 107, 53, 0.4);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.blueprint-projects__stamp::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--bp-orange);
+  border-radius: 50%;
+}
+
+.blueprint-projects__title {
+  font-family: 'Big Shoulders Stencil', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--bp-line);
+  margin: 14px 0 10px;
+}
+
+.blueprint-projects__sub {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #9ca3af;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.blueprint-projects__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
-  gap: 28px;
+  gap: 32px;
+  margin-top: 40px;
 }
 
 @media (max-width: 600px) {
-  .projects__grid {
-    gap: 20px;
+  .blueprint-projects__grid {
+    gap: 22px;
+    margin-top: 28px;
   }
 }
